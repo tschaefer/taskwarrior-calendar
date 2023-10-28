@@ -1,0 +1,14 @@
+---
+require: rubocop-rspec
+
+AllCops:
+  NewCops: enable
+
+Style/NegatedIf:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 10
