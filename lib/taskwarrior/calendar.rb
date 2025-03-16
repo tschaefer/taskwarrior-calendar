@@ -22,7 +22,7 @@ class Taskwarrior
   # By default tasks are filtered by +status:pending+ and all events are
   # appointed with an alarm *15* *minutes* *before* the event date. This can be
   # configured with the filter and alarm options. For further filter details see
-  # https://taskwarrior.org/docs/filter.html. All events are exported in the
+  # https://taskwarrior.org/docs/filter. All events are exported in the
   # timezone of the system. This can be configured with the +TZ+ environment
   # variable.
   class Calendar
