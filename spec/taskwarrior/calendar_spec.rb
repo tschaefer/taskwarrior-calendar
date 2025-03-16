@@ -6,7 +6,7 @@ require 'tempfile'
 
 require 'taskwarrior/calendar'
 
-RSpec.describe Taskwarrior::Calendar do
+RSpec.describe Taskwarrior::Calendar, :aggregate_failures do
   around do |example|
     ENV['TASKRC'] = File.expand_path('../fixtures/taskrc', __dir__)
     ENV['TASKDATA'] = File.expand_path('../fixtures/task', __dir__)
@@ -22,7 +22,7 @@ RSpec.describe Taskwarrior::Calendar do
     end
 
     it 'raises error on invalid task configuration' do
-      %w[TASKRC TASKDATA].each { |key| ENV[key] = '/dev/null' }
+      %w[TASKRC TASKDATA].each { |key| ENV[key] = '/dev/null' } # rubocop:disable Style/FileNull
 
       expect { described_class.new }.to raise_error(IOError)
     end
@@ -35,7 +35,7 @@ RSpec.describe Taskwarrior::Calendar do
   describe '#to_object' do
     let(:calendar) { described_class.new.to_object }
 
-    it 'returns an Icalendar::Calendar object', :aggregate_failures do
+    it 'returns an Icalendar::Calendar object' do
       expect(calendar).to be_a(Icalendar::Calendar)
       expect(calendar.has_event?).to be true
       expect(calendar.has_timezone?).to be true
@@ -49,7 +49,7 @@ RSpec.describe Taskwarrior::Calendar do
     let(:ical) { tasks.to_ical }
     let(:timezone) { tasks.tz_name }
 
-    it 'returns an ICS String', :aggregate_failures do
+    it 'returns an ICS String' do
       expect(ical).to be_a(String)
       expect(ical).to start_with("BEGIN:VCALENDAR\r\n")
       expect(ical).to include("TZID:#{timezone}\r\n")
@@ -62,7 +62,7 @@ RSpec.describe Taskwarrior::Calendar do
   describe '#publish' do
     let(:tasks) { described_class.new }
 
-    it 'writes an ICS file', :aggregate_failures do
+    it 'writes an ICS file' do
       Tempfile.create('tasks.ics') do |file|
         tasks.publish(filename: file.path)
 
