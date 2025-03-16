@@ -14,6 +14,7 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
   - "Rakefile"
+  - "coverage/"
 hyperlink_all: false
 line_numbers: false
 locale:
