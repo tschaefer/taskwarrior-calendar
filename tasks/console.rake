@@ -26,11 +26,11 @@ end
 
 desc 'Start a console session with Taskwarrior::Calendar loaded'
 task :console do
-  require 'irb'
-  require 'irb/completion'
+  require 'pry'
+  require 'pry-byebug'
   require 'taskwarrior/calendar'
 
   ARGV.clear
 
-  IRB.start
+  Pry.start
 end

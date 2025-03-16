@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'irbtools', require: 'irbtools/binding'
+  gem 'overcommit'
+  gem 'pry'
+  gem 'pry-byebug'
   gem 'rake'
   gem 'rspec'
   gem 'rubocop'
