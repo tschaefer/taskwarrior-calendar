@@ -11,15 +11,13 @@ with an **alarm 15 minutes before** the event date.
 
 ## Installation
 
-    $ gem build
-    $ gem install -g
-    $ gem install taskwarrior-callendar-$(ruby -Ilib -e 'require "taskwarrior/calendar/version"; puts Taskwarrior::Calendar::VERSION').gem
+    gem install taskwarrior-calendar
 
 ## Usage
 
-    $ task-ical convert --no-alarm
+    task-ical convert --no-alarm
 
-    $ task-ical --filter project:home --file home-tasks.ics
+    task-ical --filter project:home --file home-tasks.ics
 
 For further information about the command line tool `task-ical` use the
 switches `--help` / `--man`.
