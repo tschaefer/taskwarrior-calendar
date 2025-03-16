@@ -32,8 +32,11 @@ Gem::Specification.new do |spec|
 
   spec.post_install_message = 'All your tasks are belong to us!'
 
+  spec.add_dependency 'base64'
   spec.add_dependency 'clamp', '~> 1.3.2'
   spec.add_dependency 'icalendar', '~> 2.9.0'
+  spec.add_dependency 'logger'
+  spec.add_dependency 'ostruct'
   spec.add_dependency 'pastel', '~> 0.8.0'
   spec.add_dependency 'tty-pager', '~> 0.14.0'
   spec.add_dependency 'tzinfo', '~> 2.0.6'
