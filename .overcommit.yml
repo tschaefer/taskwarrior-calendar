@@ -23,7 +23,7 @@ CommitMsg:
     enabled: true
     description: 'Check commit message match conventional format'
     expected_pattern_message: '<type>(<optional scope>): <description>'
-    pattern: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\([a-z0-9]+\))?(\!)?: (.+)$'
+    pattern: '^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(#?[a-z0-9]+\))?(\!)?: (.+)$'
     sample_message: 'chore(deps): bump version'
 
 PreCommit:
