@@ -48,6 +48,7 @@ RSpec.describe Taskwarrior::Calendar, :aggregate_failures do
     let(:tasks) { described_class.new }
     let(:ical) { tasks.to_ical }
     let(:timezone) { tasks.tz_name }
+    let(:uuid) { tasks.instance_variable_get(:@tasks).first['uuid'] }
 
     it 'returns an ICS String' do
       expect(ical).to be_a(String)
@@ -56,6 +57,7 @@ RSpec.describe Taskwarrior::Calendar, :aggregate_failures do
       expect(ical).to end_with("END:VCALENDAR\r\n")
       expect(ical).to include("SUMMARY:Due: Call insurance.\r\n")
       expect(ical).to include("SUMMARY:Scheduled: Call insurance.\r\n")
+      expect(ical).to include("UID:#{uuid}\r\n")
     end
   end
 
