@@ -15,6 +15,7 @@ class Taskwarrior
 
         event.summary = "#{type.capitalize}: #{task['description']}"
         event.ip_class = 'PRIVATE'
+        event.uid = task['uuid']
 
         add_event_alarm(event, task, type) if alarm
       end
