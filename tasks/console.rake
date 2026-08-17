@@ -21,7 +21,7 @@ def reload!(print: true)
     Dir.glob("#{root_dir}/#{dir}/**/*.rb").each { |f| silent { load(f) } }
   end
 
-  true
+  nil
 end
 
 desc 'Start a console session with Taskwarrior::Calendar loaded'

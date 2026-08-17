@@ -10,6 +10,7 @@ RSpec.describe Taskwarrior::Calendar, :aggregate_failures do
   around do |example|
     ENV['TASKRC'] = File.expand_path('../fixtures/taskrc', __dir__)
     ENV['TASKDATA'] = File.expand_path('../fixtures/task', __dir__)
+    ENV['TZ'] = 'UTC'
     example.run
     %w[TASKRC TASKDATA TZ].each { |key| ENV.delete(key) }
   end
