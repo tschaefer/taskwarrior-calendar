@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.bindir                = 'bin'
   spec.executables           = ['task-ical']
   spec.require_paths         = ['lib']
-  spec.required_ruby_version = '>= 3.1.1'
+  spec.required_ruby_version = '>= 3.3.12'
 
   spec.metadata['rubygems_mfa_required'] = 'true'
   spec.metadata['source_code_uri']       = 'https://github.com/tschaefer/taskwarrior-calendar'
@@ -33,12 +33,12 @@ Gem::Specification.new do |spec|
   spec.post_install_message = 'All your tasks are belong to us!'
 
   spec.add_dependency 'base64'
-  spec.add_dependency 'clamp', '~> 1.3.2'
-  spec.add_dependency 'icalendar', '~> 2.9.0'
+  spec.add_dependency 'clamp', '~> 1.5.2'
+  spec.add_dependency 'icalendar', '~> 2.12.4'
   spec.add_dependency 'logger'
   spec.add_dependency 'ostruct'
   spec.add_dependency 'pastel', '~> 0.8.0'
   spec.add_dependency 'tty-pager', '~> 0.14.0'
   spec.add_dependency 'tzinfo', '~> 2.0.6'
-  spec.add_dependency 'tzinfo-data', '~> 1.2023.3'
+  spec.add_dependency 'tzinfo-data', '~> 1.2026.3'
 end
